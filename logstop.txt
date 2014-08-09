@@ -1,0 +1,5 @@
+LogStop :: Logger -> IO ()
+LogStop (Logger m) = do
+	s <- newEmptyMVar
+	putMVar m (Stop s)
+	takeMVar s
