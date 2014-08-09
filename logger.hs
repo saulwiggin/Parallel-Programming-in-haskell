@@ -1,3 +1,6 @@
-data Logger = Logger (MVar Logcommand)
-
-data LogCommand = Message String | Stop (MVar ())
+main :: IO ()
+main = do 
+	l <- initLogger
+	logmessage 1 "hello"
+	logMessage 1 "bye"
+	logStop 1
